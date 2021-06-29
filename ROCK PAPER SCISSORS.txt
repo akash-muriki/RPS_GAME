@@ -1,0 +1,46 @@
+import random as rnd
+print("PLEASE TURN ON CAPS LOCK")
+name=input("Enter the Your name:\n").upper()
+print("Hi!",name)
+No_of_plays=int(input("How many plays:\n"))
+user_points=0
+plays=0
+while plays<No_of_plays:
+    User_choice=input("Choose among R/P/S\n").upper()
+    system_choice = rnd.choice(["R", "P", "S"])
+    if system_choice=='R':
+        print("user",User_choice)
+        print("system",system_choice)
+        if User_choice=="P":
+            user_points=user_points+1
+        if User_choice=="S":
+            user_points=user_points-1
+        if User_choice=='R':
+            user_points=user_points+0
+    if system_choice=="P":
+        print("user", User_choice)
+        print("system", system_choice)
+        if User_choice=="S":
+            user_points=user_points+1
+        if User_choice=="R":
+            user_points=user_points-1
+        if User_choice=='P':
+            user_points=user_points+0
+    if system_choice=="S":
+        print("user", User_choice)
+        print("system", system_choice)
+        if User_choice=="R":
+            user_points=user_points+1
+        if User_choice=="P":
+            user_points=user_points-1
+        if User_choice=='S':
+            user_points=user_points+0
+    plays=plays+1
+if user_points==0:
+    print("Tie")
+if user_points>0:
+    print("Won")
+if user_points<0:
+    print("Lost")
+print("_______________________________")
+
